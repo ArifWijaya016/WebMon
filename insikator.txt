@@ -1,0 +1,4 @@
+button indformasi bio
+tt = tekanan tangki
+tb = tekanan tabung
+tempbi = temperature bio
