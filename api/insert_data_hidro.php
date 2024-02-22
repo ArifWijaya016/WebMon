@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";  // Ganti dengan username MySQL Anda
-$password = "";      // Ganti dengan password MySQL Anda
+$username = "admin";  // Ganti dengan username MySQL Anda
+$password = "root";      // Ganti dengan password MySQL Anda
 $dbname = "server";   // Ganti dengan nama database Anda
 $table = "hidroponik"; // Ganti dengan nama tabel Anda
 
@@ -14,11 +14,12 @@ if ($conn->connect_error) {
 }
 
 // Mengambil data dari ESP32
-$tdsvalue = $_POST['tds'];
+$tds = $_POST['tds'];
 $temp_hidro = $_POST['temp_hidro'];
 
 // Menyimpan data ke database dengan kolom 'nama' yang bernilai 'hidroponik'
-$sql = "INSERT INTO $table (tds, temp_hidro, nama) VALUES ($tdsvalue, $temp_hidro, 'hidroponik')";
+$sql = "INSERT INTO $table (tds, temp_hidro, nama) 
+VALUES ($tds, $temp_hidro, 'hidroponik')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Data inserted successfully";
